@@ -1,0 +1,8 @@
+<section id="search">
+    <p ng-hide="gitHubUser">Time left before autosearch : {{countdown}}</p>
+    <form name="searchUser" ng-submit="search()">
+        <input type="search" required="" placeholder="Type user name to find" ng-model="username" />
+        <input type="submit" value="Search !" />
+    </form>
+    <div ng-hide="gitHubUser">Search for a GitHub profile to display its base info and repositories !</div>
+</section>

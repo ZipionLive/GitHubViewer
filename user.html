@@ -1,0 +1,52 @@
+<section id="user-details">
+    <dl>
+        <dt>Name</dt>
+        <dd>{{gitHubUser.name}}</dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:{{gitHubUser.email}}">{{gitHubUser.email}}</a></dd>
+        <dt>Login</dt>
+        <dd>{{gitHubUser.login}}</dd>
+        <dt>Id</dt>
+        <dd>{{gitHubUser.id}}</dd>
+        <dt>Url</dt>
+        <dd><a ng-href="{{gitHubUser.html_url}}" target="_blank">{{gitHubUser.html_url}}</a></dd>
+        <dt>Location</dt>
+        <dd>{{gitHubUser.location}}</dd>
+        <dt>Photo</dt>
+        <dd><img class="photo" ng-src="{{gitHubUser.avatar_url}}" alt="GitHub avatar" title="{{gitHubUser.login}}" /></dd>
+    </dl>
+</section>
+<hr />
+<section id="user-repos">
+    <div>
+        Order :
+        <select ng-model="repoSortOrder">
+            <option value="+name">Name (ascending)</option>
+            <option value="-name">Name (descending)</option>
+            <option value="+stargazers_count">Stars (ascending)</option>
+            <option value="-stargazers_count">Stars (descending)</option>
+            <option value="+language">Language (ascending)</option>
+            <option value="-language">Language (descending)</option>
+        </select>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Stars</th>
+                <th>Language</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="repo in gitHubRepos | orderBy:repoSortOrder">
+                <td>{{repo.name}}</td>
+                <td>{{repo.stargazers_count | number}}</td>
+                <td>{{repo.language}}</td>
+                <td><a ng-href="#/user/{{gitHubUser.name}}/repo/{{repo.name}}">Details</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<hr />
+<a href="#/main">Back to search</a>

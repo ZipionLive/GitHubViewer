@@ -1,0 +1,100 @@
+/* Styles go here */
+
+body {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.photo {
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 100px;
+    border: solid 10px #be0041;
+}
+
+.photo:hover {
+    border: none;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.miniature {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 55px;
+    border: solid 5px #be0041;
+}
+
+.miniature:hover {
+    border: none;
+    max-width: 110px;
+    max-height: 110px;
+}
+
+#contributors {
+    margin: 10px 0;
+    padding: 0;
+}
+
+#contributors li {
+    list-style-type: none;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border: solid thin #333;
+    border-radius: 10px;
+    clear: both;
+}
+
+#contributors li img,
+#contributors li span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#contributors li img {
+    margin-right: 20px;
+}
+
+dl dt,
+dl dd {
+    float: left;
+    margin: 0 0 10px 0;
+    white-space: pre;
+    min-width: 150px;
+}
+
+dl dt,
+hr {
+    clear: both;
+}
+
+dl dt:after {
+    content: ' : ';
+}
+
+table tr td,
+table tr th {
+    border: none;
+}
+
+table tbody tr:first-child td {
+    border-top: solid thin #333;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #EEE;
+}
+
+table tbody tr:hover {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+table tbody tr:hover a {
+    color: #EEE;
+}
+
+table tbody tr:hover a:hover {
+    color: white;
+}

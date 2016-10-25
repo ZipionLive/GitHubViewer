@@ -1,0 +1,33 @@
+<section id="repo-details">
+    <dl>
+        <dt>Name</dt>
+        <dd>{{repo.full_name}}</dd>
+        <dt>Id</dt>
+        <dd>{{repo.id}}</dd>
+        <dt>Description</dt>
+        <dd>{{repo.description}}</dd>
+        <dt>Url</dt>
+        <dd><a ng-href="{{repo.url}}" target="_blank">{{repo.url}}</a></dd>
+    </dl>
+</section>
+<hr />
+<section id="repo-contributors">
+    <div>
+        Order :
+        <select ng-model="contributorSortOrder">
+            <option value="+login">Login (ascending)</option>
+            <option value="-login">Login (descending)</option>
+        </select>
+    </div>
+    <ul id="contributors">
+        <li ng-repeat="contributor in contributors | orderBy:contributorSortOrder">
+            <img class="miniature"
+                 ng-src="{{contributor.avatar_url}}"
+                 ng-alt="{{contributor.login}}&quot;s avatar"
+                 ng-title="{{contributor.login}}" />
+            <span class="login">{{contributor.login}}</span>
+        </li>
+    </ul>
+</section>
+<hr />
+<a href="#/main">Back to search</a>
